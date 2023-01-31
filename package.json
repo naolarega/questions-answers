@@ -1,0 +1,37 @@
+{
+  "name": "questions-answers",
+  "version": "1.0.0",
+  "description": "A question and answer application to find a concise solution for a problem.",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "serve": "node ./dist/main.js",
+    "dev:serve": "npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naolarega/questions-answers.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "graphql",
+    "mongo",
+    "redis"
+  ],
+  "author": "Naol Arega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naolarega/questions-answers/issues"
+  },
+  "homepage": "https://github.com/naolarega/questions-answers#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "graphql-http": "^1.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.5"
+  }
+}
