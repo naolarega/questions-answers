@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/naolarega/questions-answers#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "graphql": "^16.6.0",
     "graphql-http": "^1.13.0"
   },
   "devDependencies": {
