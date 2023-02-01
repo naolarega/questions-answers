@@ -1,11 +1,16 @@
 import {
     GraphQLID,
     GraphQLInt,
+    GraphQLList,
     GraphQLString,
+    GraphQLNonNull,
     GraphQLEnumType,
     GraphQLObjectType
 } from 'graphql';
-import { User } from '../user/type';
+import {
+    User,
+    UserError
+} from '../user/type';
 import { Task  } from '../task/type';
 import { SearchResultItem } from '../misc';
 
@@ -55,7 +60,19 @@ export const Approach = new GraphQLObjectType({
             type: Task
         },
         detailList: {
-            type: ApproachDetailCategory
+            type: ApproachDetail
+        }
+    }
+});
+
+export const ApproachPayload = new GraphQLObjectType({
+    name: 'ApproachPayload',
+    fields: {
+        errors: {
+            type: new GraphQLList(UserError)
+        },
+        approach: {
+            type: new GraphQLNonNull(Approach)
         }
     }
 });

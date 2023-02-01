@@ -21,6 +21,10 @@ export default class Config {
         return process.env['MONGO_CONNECTION_STRING'];
     }
 
+    static get mongoDatabase() {
+        return process.env['MONGO_DATABASE'];
+    }
+
     static get redisSonnectionString() {
         return process.env['REDIS_CONNECTION_STRING'];
     }

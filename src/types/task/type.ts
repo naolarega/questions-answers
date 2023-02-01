@@ -3,9 +3,13 @@ import {
     GraphQLInt,
     GraphQLList,
     GraphQLString,
+    GraphQLNonNull,
     GraphQLObjectType
 } from 'graphql';
-import { User } from '../user/type';
+import {
+    User,
+    UserError
+} from '../user/type';
 import { SearchResultItem } from '../misc';
 import { Approach } from '../approach/type';
 
@@ -35,6 +39,18 @@ export const Task  = new GraphQLObjectType({
         },
         approachList: {
             type: new GraphQLList(Approach)
+        }
+    }
+});
+
+export const TaskPayload = new GraphQLObjectType({
+    name: 'TaskPayload',
+    fields: {
+        errors: {
+            type: new GraphQLList(UserError)
+        },
+        task: {
+            type: new GraphQLNonNull(Task)
         }
     }
 });

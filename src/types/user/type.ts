@@ -39,3 +39,39 @@ export const Me = new GraphQLObjectType({
         }
     }
 });
+
+export const UserError = new GraphQLObjectType({
+    name: 'UserError',
+    fields: {
+        message: {
+            type: GraphQLString
+        }
+    }
+});
+
+export const UserPayload = new GraphQLObjectType({
+    name: 'UserPayload',
+    fields: {
+        errors: {
+            type: new GraphQLList(UserError)
+        },
+        user: {
+            type: new GraphQLNonNull(User)
+        },
+        authToken: {
+            type: new GraphQLNonNull(GraphQLString)
+        }
+    }
+});
+
+export const UserDeletePayload = new GraphQLObjectType({
+    name: 'UserDeletePayload',
+    fields: {
+        errors: {
+            type: new GraphQLList(UserError)
+        },
+        deletedUserId: {
+            type: new GraphQLNonNull(GraphQLID)
+        }
+    }
+});
